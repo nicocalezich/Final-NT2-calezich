@@ -3,23 +3,23 @@ import Vue from 'vue';
 Vue.filter('codificar', function (value) {
     for (let i = 0; i < value.length; i++) {
         let char = value.charAt(i);
-        let newChar = null;
+        let nuevoChar = null;
         switch (char) {
             case 'a':
-                newChar = 'u'
+                nuevoChar = 'u'
                 break
             case 'e':
-                newChar = 'o'
+                nuevoChar = 'o'
                 break
             case 'o':
-                newChar = 'e'
+                nuevoChar = 'e'
                 break
             case 'u':
-                newChar = 'a'
+                nuevoChar = 'a'
                 break
         }
-        if (newChar) {
-            value = value.substring(0, i) + newChar + value.substring(i + 1)
+        if (nuevoChar) {
+            value = value.substring(0, i) + nuevoChar + value.substring(i+1)
         }
     }
     return value
