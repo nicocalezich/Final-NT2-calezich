@@ -18,9 +18,8 @@ Vue.filter('codificar', function (value) {
                 nuevoChar = 'a'
                 break
         }
-        if (nuevoChar) {
-            value = value.substring(0, i) + nuevoChar + value.substring(i+1)
-        }
+            value = nuevoChar? value.substring(0, i) + nuevoChar + value.substring(i+1) : value
+        
     }
     return value
 })
