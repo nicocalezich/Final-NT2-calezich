@@ -34,12 +34,17 @@ Vue.filter('minuscula', function(value) {
 });
 
 Vue.filter("mayusculaminuscula", function(value, primeraMayus) {
-    return value
+    value = value
       .split("")
-      .map((x, i) => {
-        return (i % 2 === 0) === primeraMayus ? x.toUpperCase() : x;
+      .map((char, i) => {
+          if((i % 2 === 0) === primeraMayus){
+              char = char.toUpperCase()
+          }
+          return char
       })
       .join("");
+
+      return value
   });
 
   
